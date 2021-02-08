@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="Centro" class="es.studium.beans.academia.Centros">
+		<constructor-arg name="nombre" value="Escuela de inglés"></constructor-arg>
+		<constructor-arg name="direccion" value="Reyes Católicos, 14"></constructor-arg>
+		<constructor-arg name="alumnos">
+			<list>
+				<ref bean="Alumno"/>
+				<bean class="es.studium.beans.academia.Alumnos">
+					<constructor-arg name="nombre" value="Ana Abel"></constructor-arg>
+					<constructor-arg name="direccion"
+						value="Paseo de América, 15"></constructor-arg>
+					<constructor-arg name="matricula" value="130360"></constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="codigo" value="2222"></constructor-arg>
+	</bean>
+
+	<bean id="Alumno" class="es.studium.beans.academia.Alumnos">
+		<constructor-arg name="nombre" value="Carmen Cano"></constructor-arg>
+		<constructor-arg name="direccion"
+			value="Reyes Católicos, 2"></constructor-arg>
+		<constructor-arg name="matricula" value="130360"></constructor-arg>
+	</bean>
+
+	<bean id="Asignatura" class="es.studium.beans.academia.Asignaturas">
+		<constructor-arg name="nombre" value="Inglés B2"></constructor-arg>
+		<constructor-arg name="horas" value="5"></constructor-arg>
+		<constructor-arg name="notas" value="6"></constructor-arg>
+		<constructor-arg name="codigo" value="1111"></constructor-arg>
+	</bean>
+
+
+
+
+</beans>
